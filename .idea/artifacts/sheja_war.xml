@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sheja:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/sheja_war</output-path>
+    <root id="archive" name="rtsa.war">
+      <element id="artifact" artifact-name="sheja:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jfxrt" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
