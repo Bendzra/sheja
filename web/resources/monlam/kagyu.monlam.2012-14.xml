@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../books.xsd">
-<editions ul="The Kagyu Monlam Prayers" checked="false">
-<edition id="1" lang="tib-wylie" title="bka' brgyud smon lam chen mo'i zhal 'don" author="" />
-<edition id="2" lang="en" title="The Kagyu Monlam Prayers" author="" translator="Helene Li Choi"/>
-<edition id="3" lang="ru" title="Собрание текстов великого молитвенного собрания (Монлама) Кагью" author="" translator=""/>
+<editions ul="Kagyu Monlam" checked="false">
+<edition id="1" lang="tib-wylie" title="bka' brgyud smon lam chen mo'i zhal 'don" author="Buddha et al." />
+<edition id="2" lang="en" title="The Kagyu Monlam Prayers (2012-2014)" author="Buddha et al." translator="Helene Li Choi"/>
+<edition id="3" lang="ru" title="Собрание текстов великого молитвенного собрания (Монлама) Кагью" author="Будда и др." translator="Карма Дорджи"/>
 </editions>
 <b>
 <fuse>

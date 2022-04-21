@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page import="jsp.Drop" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="drops" class="jsp.Drops" scope="request"/>

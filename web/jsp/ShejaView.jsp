@@ -5,22 +5,59 @@
 <jsp:useBean id="bookShelf" class="jsp.BookShelf" scope="request"/>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/shejaView.css" />
     <title>shes bya kun khyab yig rigs khag gnyis mnyam du bsgrigs pa</title>
+
+    <script>
+        function provideRows(str)
+        {
+            var tbody = document.getElementById("appendix");
+            if (str.length === 0) {
+                tbody.innerHTML = "";
+            } else {
+                var xml = new XMLHttpRequest();
+                xml.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        tbody.innerHTML = this.responseText;
+                        tbody.parentElement.parentElement.classList.remove("d-none");
+                    }
+                };
+                xml.open("GET", "<%=request.getContextPath()%>/jsp/appendix.jsp?a=" + str, false);
+                xml.send();
+            }
+        }
+    </script>
+
 </head>
 <body>
-
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">shes bya kun khyab yig rigs khag gnyis mnyam du bsgrigs pa</h1>
-        <p class="lead">Параллельный поиск по нескольким синхронизированным текстам</p>
+        <hr class="my-2" />
+        <%
+            String[] epithets = new String[] {"concurrent", "linked", "synchronized", "concordant", "parallel"};
+            int s = 1 + (int) ( (epithets.length - 1) * Math.random());
+            int t = (int) ( (epithets.length - 1) * Math.random() );
+            while( s == t) {
+                t = (int) ( (epithets.length - 1) * Math.random() );
+            }
+            out.println("<p class=\"lead\">" + epithets[s] + " search across multiple " + epithets[t] + " texts</p>");
+        %>
+		<%--<p class="lead">Concordant search across multiple linked texts</p>--%>
+        <%--<p class="lead">Параллельный поиск по нескольким синхронизированным текстам</p>--%>
         <%--<hr class="my-4">--%>
-        <%--<p>Пока что ищет только по коренному тексту (verses) "shes bya kun kyab" Джамгёна Конгтрула,--%>
-        <%--синхронизированному с английсим его переводом – "The Encompassment of All Knowledge" (10 книг).</p>--%>
+        <%--<p>Ищет по текстам Энциклопедии "shes bya kun kyab" Джамгёна Конгтрула,--%>
+        <%--синхронизированным с английским её переводом – "The Encompassment of All Knowledge" (10 книг).</p>--%>
     </div>
+</div>
+
+<div class="while-progress d-none">
+    <i class="fas fa-2x fa-spinner fa-spin"></i>
+    <label>Please wait a while ...</label>
 </div>
 
 <div class="container">
@@ -90,6 +127,37 @@
         </div>
     </form>
 
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Glossary</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="">Lists</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="">Indexes</a>
+            </li>
+        </ul>
+    </nav>
+
+	<div class="table-responsive h-50 d-none">
+		<table class="table table-sm table-striped">
+            <thead class="thead-dark sticky-top" style="z-index:1;">
+                <tr>
+                    <th class="d-none">id</th>
+                    <th>Tibetan</th>
+                    <th>Sanskrit</th>
+                    <th>English</th>
+                    <th class="d-none">book</th>
+                    <th class="d-none">comment</th>
+                </tr>
+            </thead>
+            <tbody id="appendix">
+                <!--rows to insert-->
+            </tbody>
+        </table>
+	</div>
 </div>
 
 <div style="margin-top:500px;"></div>
@@ -98,72 +166,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script src="<%=request.getContextPath()%>/js/shejaView.js"></script>
 
-<script>
-    $(function () {
 
-        function init() {
-            $('ul > div')
-                .hide()
-                .addClass('bg-dark text-white')
-                .css('position', 'absolute')
-                .css('padding', 10)
-                .css('overflow', 'hidden');
-        }
-
-        $('ul > input:checkbox').click(function() {
-            $(this).siblings('div').first().find('input:checkbox').prop('checked', ($(this).is(':checked')));
-        });
-
-        $('ul > div > div > input:checkbox').click(function() {
-            var omniTrue = true, omniFalse = false;
-            $(this).closest('ul > div').find('div > input:checkbox').each(function () {
-                var b = $(this).prop('checked');
-                omniTrue &= b;
-                omniFalse |= b;
-            });
-            var $menu = $(this).closest('ul').children('input:checkbox').first();
-
-            $menu.prop('indeterminate', false);
-            if ( omniTrue ) $menu.prop('checked', true);
-            else if ( !omniFalse ) $menu.prop('checked', false);
-            else $menu.prop('indeterminate', true);
-        });
-
-        $('ul a').click(function (e) {
-            e.preventDefault();
-            $d = $(this).closest('ul').children('div').first();
-            if( $d.css('display') === "block" ) {
-                $d.css("z-index", 1 );
-            } else {
-                $d.css("z-index", 1000 );
-            }
-            $d.toggle("fast");
-        });
-
-        $('ul').mouseleave(function (e) {
-            $d = $(this).children('div').first();
-            if( $d.css('display') === "block" ) {
-                $d.toggle("fast").css("z-index", 1 );
-            }
-        });
-
-        $('#wholeWord').click(function () {
-            $('#wylie').prop("disabled", !($(this).prop("checked")));
-        });
-
-        $('form').on('submit', function (e) {
-            var search = $("input[name='q']");
-            var t = search.val().trim();
-            var books = $('.book-list').find('input:checked');
-            if (t.length === 0 || books.length === 0) {
-                e.preventDefault();
-            }
-        });
-
-        init();
-
-    });
-</script>
 </body>
 </html>

@@ -8,57 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b49cb01-f450-4602-8e16-477061c4c7ea" name="Default Changelist" comment="initial commit via IntelliJ Idea, xml: sheja 5 books, avatamsaka, kagyu monlam.">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/sheja_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/sheja_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfxrt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sheja.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/OutlineController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ShejaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ShowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/BookShelf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/CrumbsKeeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/Drop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/Drops.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/Edition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/Found.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jsp/Fuse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/BranchesParserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/DoneParsingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/EditionsParserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/MatchesParserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/OutlineParserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parsers/TestParserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/jsp/DeliveryView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/jsp/OutlineView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/jsp/ShejaView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/jsp/ShowView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/books.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/monlam/kagyu.monlam.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sheja/sheja-00.root.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sheja/sheja-01.myriad.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sheja/sheja-02.the-light-of-the-world.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sheja/sheja-03.what-the-buddha-taught.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sheja/sheja-04.buddhism-resplendent-in-the-world.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.01-09.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.10-17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.18-23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.24-27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.28-30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.32-43.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.44.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.45.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsers/BranchesParserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/BranchesParserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/DeliveryView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/DeliveryView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/OutlineView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/OutlineView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/ShejaView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/ShejaView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/ShowView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/ShowView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/monlam/kagyu.monlam.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.32-43.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.32-43.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.44.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.44.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.45.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/sutra/avatamsaka.tib-eng.45.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,22 +27,46 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/jsp/ShejaView.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/shejaView.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/shejaView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2142">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toggleLeft'&gt;&lt;i class='fa fa-ellipsis-h'&gt;</find>
-      <find>&lt;b&gt;</find>
-      <find>fa-ellipsis-h fa-ellipsis-v</find>
-      <find>row border-bottom align-items-center mb-2</find>
       <find>&quot;placeholder&quot;</find>
       <find>&lt;a&gt;</find>
       <find>&lt;small&gt;</find>
@@ -110,6 +93,10 @@
       <find>ol</find>
       <find>Done</find>
       <find>k</find>
+      <find>ū</find>
+      <find>bookShelf</find>
+      <find>s</find>
+      <find>t</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;div</replace>
@@ -155,18 +142,22 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/parsers/MatchesParserHandler.java" />
         <option value="$PROJECT_DIR$/src/jsp/Drops.java" />
-        <option value="$PROJECT_DIR$/src/parsers/BranchesParserHandler.java" />
-        <option value="$PROJECT_DIR$/web/jsp/ShowView.jsp" />
         <option value="$PROJECT_DIR$/src/controllers/ShowController.java" />
-        <option value="$PROJECT_DIR$/web/jsp/OutlineView.jsp" />
         <option value="$PROJECT_DIR$/src/parsers/OutlineParserHandler.java" />
         <option value="$PROJECT_DIR$/src/controllers/OutlineController.java" />
         <option value="$PROJECT_DIR$/src/parsers/TestParserHandler.java" />
-        <option value="$PROJECT_DIR$/web/jsp/DeliveryView.jsp" />
-        <option value="$PROJECT_DIR$/src/controllers/ShejaController.java" />
         <option value="$PROJECT_DIR$/src/jsp/Edition.java" />
         <option value="$PROJECT_DIR$/src/parsers/EditionsParserHandler.java" />
         <option value="$PROJECT_DIR$/src/jsp/Book.java" />
+        <option value="$PROJECT_DIR$/src/parsers/BranchesParserHandler.java" />
+        <option value="$PROJECT_DIR$/web/jsp/ShowView.jsp" />
+        <option value="$PROJECT_DIR$/web/jsp/OutlineView.jsp" />
+        <option value="$PROJECT_DIR$/web/jsp/DeliveryView.jsp" />
+        <option value="$PROJECT_DIR$/src/controllers/ShejaController.java" />
+        <option value="$PROJECT_DIR$/web/jsp/appendix.jsp" />
+        <option value="$PROJECT_DIR$/web/jsp/sheja-appendix.combined.glossary.htm" />
+        <option value="$PROJECT_DIR$/web/css/shejaView.css" />
+        <option value="$PROJECT_DIR$/web/js/shejaView.js" />
         <option value="$PROJECT_DIR$/web/jsp/ShejaView.jsp" />
       </list>
     </option>
@@ -193,8 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,21 +191,18 @@
               <item name="sheja" type="b2602c69:ProjectViewProjectNode" />
               <item name="sheja" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sheja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sheja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1645175649129" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1650550687527" />
     <property name="extract.method.default.visibility" value="public" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -227,12 +213,12 @@
     <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\MyProjects\Java\IdeaProjects\misc\sheja\src\jsp" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\MyProjects\Java\IdeaProjects\WebApps\sheja\web\resources" />
       <recent name="D:\MyProjects\Java\IdeaProjects\misc\sheja\web\resources\sheja" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProjects\Java\IdeaProjects\misc\sheja\src\jsp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -370,6 +356,16 @@
       <workItem from="1648363907273" duration="3789000" />
       <workItem from="1648368609430" duration="8458000" />
       <workItem from="1648391520941" duration="1967000" />
+      <workItem from="1648796177290" duration="1207000" />
+      <workItem from="1648919455179" duration="580000" />
+      <workItem from="1649091326202" duration="2367000" />
+      <workItem from="1649666610921" duration="360000" />
+      <workItem from="1649694534129" duration="4053000" />
+      <workItem from="1650529746714" duration="83000" />
+      <workItem from="1650530378985" duration="424000" />
+      <workItem from="1650537120793" duration="628000" />
+      <workItem from="1650540053821" duration="10503000" />
+      <workItem from="1650550970473" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit via IntelliJ Idea, xml: sheja 5 books, avatamsaka, kagyu monlam.">
       <created>1648392813897</created>
@@ -382,12 +378,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223052000" />
+    <option name="totallyTimeSpent" value="243322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1040" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83601284" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.83601284" visible="true" weight="0.20918368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -420,6 +417,40 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83601284" visible="true" weight="0.20510204" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" sideWeight="0.16398714" side_tool="true" weight="0.2010204" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3488746" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43890676" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.329582" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.329582" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -449,58 +480,26 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit via IntelliJ Idea, xml: sheja 5 books, avatamsaka, kagyu monlam." />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit via IntelliJ Idea, xml: sheja 5 books, avatamsaka, kagyu monlam." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/jsp/Branch.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/src.zip!/java/util/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2074">
-          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/src.zip!/java/util/Stack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/src.zip!/org/xml/sax/Attributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2741">
-          <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/javafx-src.zip!/javafx/util/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1037">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="563" column="6" selection-start-line="563" selection-start-column="6" selection-end-line="563" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="1242" column="18" selection-start-line="1242" selection-start-column="18" selection-end-line="1242" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_311/src.zip!/org/xml/sax/SAXException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -583,30 +582,6 @@
     <entry file="file://$PROJECT_DIR$/web/resources/sheja/sheja-00.root.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/ShowView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="22" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/OutlineView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parsers/BranchesParserHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="122" selection-start-line="114" selection-end-line="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/books.xsd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -638,16 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="35" column="31" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jsp/Drop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,13 +684,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/DeliveryView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="208" column="49" selection-start-line="208" selection-start-column="49" selection-end-line="208" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -803,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/ShejaView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jsp/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -823,13 +771,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/ShejaController.java">
+    <entry file="file://$PROJECT_DIR$/web/resources/monlam/kagyu.monlam.2012-14.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/monlam/kagyu.monlam.2016.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="117" column="30" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+        <state relative-caret-position="-8381">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/sheja/sheja-05.buddhist-ethics.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="2267" column="160" selection-start-line="2267" selection-start-column="159" selection-end-line="2267" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jsp/Drop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1270">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parsers/BranchesParserHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/ShowView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/DeliveryView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/OutlineView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/sheja-appendix.combined.glossary.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="3804" lean-forward="true" selection-start-line="3804" selection-end-line="3804" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/appendix.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ShejaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/ShejaView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/shejaView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/shejaView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
         </state>
       </provider>
     </entry>
@@ -840,13 +881,13 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="library" />
-              <type id="javaee-facet-resources" />
-              <type id="artifact" />
               <type id="jpa-descriptors" />
+              <type id="library" />
+              <type id="artifact" />
+              <type id="javaee-facet-resources" />
             </show-content>
           </artifact-editor>
-          <last-edited>sheja:war</last-edited>
+          <last-edited>sheja:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -895,11 +936,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|sheja</last-edited>
+          <last-edited>sheja</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -22,6 +22,7 @@ public class BranchesParserHandler extends DefaultHandler
     private Drop drop = null;
     private boolean dropFlag = false;
     private boolean crambFlag = false;
+	private boolean rootFlag = false;
     private List<Drop> drops = new ArrayList<>();
 
     public List<Drop> getDrops()
@@ -72,8 +73,13 @@ public class BranchesParserHandler extends DefaultHandler
 
                     for (int i = 0; i < attributes.getLength(); i++) {
                         if (attributes.getQName(i).equals("crumb")) {
-                            drop.getText().append("<h").append(branch_stack_size).append(">");
+							int hn = (branch_stack_size > 6) ? 6 : branch_stack_size;
+                            drop.getText().append("<h").append(hn).append(">");
                             crambFlag = true;
+                            break;
+                        } else if (attributes.getQName(i).equals("root")) {
+                            drop.getText().append("<strong>");
+                            rootFlag = true;
                             break;
                         }
                     }
@@ -87,24 +93,23 @@ public class BranchesParserHandler extends DefaultHandler
     public void endElement(String uri, String localName, String qName) throws SAXException
     {
         if (qName.equals("b")) {
-            if (branch_stack_size > 0) // pop
-            {
+            if (branch_stack_size > 0) {  // pop
                 branch_stack_size--;
             }
 
             if (branch_stack_size == 0) {
                 throw new DoneParsingException();
             }
-
         } else if (qName.equals("drop")) {
-            if(dropFlag && drop_count == drop_id) {
-                drop.getText().append("</div>");
+            if (crambFlag) {
+				int hn = (branch_stack_size > 6) ? 6 : branch_stack_size;
+                drop.getText().append("</h").append(hn).append(">");
             }
-            if(crambFlag) {
-                drop.getText().append("</h").append(branch_stack_size).append(">");
-            }
+			if (rootFlag) drop.getText().append("</strong>");
+            if (dropFlag && drop_count == drop_id) drop.getText().append("</div>");
             if (branch_stack_size > 0 && dropFlag) drops.add(drop);
             crambFlag = false;
+			rootFlag = false;
             dropFlag = false;
         }
     }
@@ -114,10 +119,13 @@ public class BranchesParserHandler extends DefaultHandler
     {
         if (currentTag != null && currentTag.equals("drop") && branch_stack_size > 0 && dropFlag) {
             for (int i = start; i < start + length; i++) {
-                if (ch[i] == '\n') {
-                    drop.getText().append("<br />");
+				if(ch[i] == '\r') {
+					continue;
+				}
+                else if (ch[i] == '\n') {
+                    drop.getText().append("<br />\r");
                 }
-                drop.getText().append((ch[i]));
+                drop.getText().append(ch[i]);
             }
         }
 
