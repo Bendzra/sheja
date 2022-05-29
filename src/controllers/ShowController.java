@@ -59,7 +59,7 @@ public class ShowController extends HttpServlet
             File file = new File(path);
             parser.parse(file, handler);
         } catch (DoneParsingException e) {
-            System.out.println("parseBranches: OK");
+//            System.out.println("parseBranches: OK");
             Drops result = new Drops();
             result.drops = handler.getDrops();
             req.setAttribute("drops", result);

@@ -5,5 +5,9 @@
 %>
 <%@ include file="sheja-appendix.combined.glossary.htm" %>
 <%
+    } else if (appendix.equals("names")) {
+%>
+<%@ include file="sheja-appendix.combined.names.htm" %>
+<%
     }
 %>

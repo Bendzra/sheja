@@ -106,13 +106,22 @@ $(function ()
 			
 		var s = 'td:eq(' + column  + ')';
 		
-		tbody.find('tr').sort(function(a, b) {
-			if (asc) {
-				return $(s, a).text().localeCompare($(s, b).text());
-			} else {
-				return $(s, b).text().localeCompare($(s, a).text());
-			}
-		}).appendTo(tbody);
+		tbody
+			.find('tr')
+			.sort( function(a, b) {
+				if (asc) {
+					return $(s, a).text().localeCompare($(s, b).text());
+				} else {
+					return $(s, b).text().localeCompare($(s, a).text());
+				}
+			})
+			.each( function(index) {
+				$(this).removeClass('d-none');
+				if ( $(s, this).text().trim() === "" ) {
+					$(this).addClass('d-none');
+				}
+			})
+			.appendTo(tbody);
 	}
 	
 	table_init();
@@ -121,22 +130,22 @@ $(function ()
 
 	$('.nav-link').click(function (e) {
 		e.preventDefault();
-		if ($(this).attr('class').indexOf('disabled') === -1)
-		{
-			table_init();
 
-			$('div.container').addClass("while-progress-bg");
-			$p = $(".while-progress");
-			$p.find('label').text( "Please wait a moment...");
-			$p.removeClass("d-none");
+		if ($(this).attr('class').indexOf('disabled') !== -1) return false;
 
-			var t = $(this).text().trim().toLowerCase();
-			setTimeout(function() {
-				provideRows(t);
-				$p.addClass("d-none");
-				$('div.container').removeClass("while-progress-bg");
-			}, 0);
-		}
+		table_init();
+
+		$('div.container').addClass("while-progress-bg");
+		$p = $(".while-progress");
+		$p.find('label').text( "Please wait a moment...");
+		$p.removeClass("d-none");
+
+		var t = $(this).text().trim().toLowerCase();
+		setTimeout(function() {
+			provideRows(t);
+			$p.addClass("d-none");
+			$('div.container').removeClass("while-progress-bg");
+		}, 0);
 	});
 
 });

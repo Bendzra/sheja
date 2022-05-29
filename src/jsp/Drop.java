@@ -17,58 +17,6 @@ public class Drop
     private List<Integer> ends = new ArrayList<>(); // концы вхождения searchSting в text
     private List<Pair<Integer, String>> chapters = new ArrayList<>();
 
-    public static class SearchOptions
-    {
-        private static boolean fMatchCase;
-        private static boolean fMatchWholeWord;
-        private static boolean fRegEx;
-        private static String searchSting;
-        private static Pattern pattern;
-        private static boolean fWylie;
-
-        public static void apply(boolean matchCase,
-                                 boolean wholeWord,
-                                 boolean wylie,
-                                 boolean regExp,
-                                 String toFind)
-        {
-            fMatchCase = matchCase;
-            fMatchWholeWord = wholeWord;
-            fWylie = wylie;
-            fRegEx = regExp;
-            searchSting = toFind;
-
-            int flags = Pattern.UNICODE_CHARACTER_CLASS | Pattern.UNICODE_CASE;
-            if (!fMatchCase) flags |= Pattern.CASE_INSENSITIVE;
-
-            if (!fRegEx) {
-                // spec chars: \.[]{}()<>*+-=!?^$|
-                String[] rx = new String[]{
-                        "\\\\", "\\.", "\\[", "\\]", "\\{", "\\}", "\\(", "\\)", "\\<", "\\>",
-                        "\\*", "\\+", "\\-", "\\=", "\\!", "\\?", "\\^", "\\$", "\\|"
-                };
-                String[] rt = new String[]{
-                        "\\\\\\\\", "\\\\.", "\\\\[", "\\\\]", "\\\\{", "\\\\}", "\\\\(", "\\\\)", "\\\\<", "\\\\>",
-                        "\\\\*", "\\\\+", "\\\\-", "\\\\=", "\\\\!", "\\\\?", "\\\\^", "\\\\$", "\\\\|"
-                };
-                for (int i = 0; i < rx.length; i++) {
-                    searchSting = searchSting.replaceAll(rx[i], rt[i]);
-                }
-            }
-
-            if (fMatchWholeWord) {
-                if (fWylie) {
-                    searchSting = "(?<=^|[\\s\")(_/!*\\[\\]{},:@#])"
-                            + searchSting + "(?=[\\s\")(_/!*\\[\\]{},:@#]|$)";
-
-                } else {
-                    searchSting = "\\b" + searchSting + "\\b";
-                }
-            }
-            pattern = Pattern.compile(searchSting, flags);
-        }
-    }
-
     public int getId()
     {
         return id;
@@ -162,4 +110,57 @@ public class Drop
     {
         return this.chapters.addAll(chapters);
     }
+
+    public static class SearchOptions
+    {
+        private static boolean fMatchCase;
+        private static boolean fMatchWholeWord;
+        private static boolean fRegEx;
+        private static String searchSting;
+        private static Pattern pattern;
+        private static boolean fWylie;
+
+        public static void apply(boolean matchCase,
+                                 boolean wholeWord,
+                                 boolean wylie,
+                                 boolean regExp,
+                                 String toFind)
+        {
+            fMatchCase = matchCase;
+            fMatchWholeWord = wholeWord;
+            fWylie = wylie;
+            fRegEx = regExp;
+            searchSting = toFind;
+
+            int flags = Pattern.UNICODE_CHARACTER_CLASS | Pattern.UNICODE_CASE;
+            if (!fMatchCase) flags |= Pattern.CASE_INSENSITIVE;
+
+            if (!fRegEx) {
+                // spec chars: \.[]{}()<>*+-=!?^$|
+                String[] rx = new String[]{
+                        "\\\\", "\\.", "\\[", "\\]", "\\{", "\\}", "\\(", "\\)", "\\<", "\\>",
+                        "\\*", "\\+", "\\-", "\\=", "\\!", "\\?", "\\^", "\\$", "\\|"
+                };
+                String[] rt = new String[]{
+                        "\\\\\\\\", "\\\\.", "\\\\[", "\\\\]", "\\\\{", "\\\\}", "\\\\(", "\\\\)", "\\\\<", "\\\\>",
+                        "\\\\*", "\\\\+", "\\\\-", "\\\\=", "\\\\!", "\\\\?", "\\\\^", "\\\\$", "\\\\|"
+                };
+                for (int i = 0; i < rx.length; i++) {
+                    searchSting = searchSting.replaceAll(rx[i], rt[i]);
+                }
+            }
+
+            if (fMatchWholeWord) {
+                if (fWylie) {
+                    searchSting = "(?<=^|[\\s\")(_/!*\\[\\]{},:@#])"
+                            + searchSting + "(?=[\\s\")(_/!*\\[\\]{},:@#]|$)";
+
+                } else {
+                    searchSting = "\\b" + searchSting + "\\b";
+                }
+            }
+            pattern = Pattern.compile(searchSting, flags);
+        }
+    }
 }
+

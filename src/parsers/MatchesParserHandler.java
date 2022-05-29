@@ -105,7 +105,7 @@ public class MatchesParserHandler extends DefaultHandler
                 if (t > 0) {
                     found = true;
                     count += t;
-                    System.out.println(count);
+                    // System.out.println(count);
                 }
             } else if (qName.equals("fuse")) {
                 if (found) {

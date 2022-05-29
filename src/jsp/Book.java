@@ -71,7 +71,7 @@ public class Book
             this.editions = handler.editions;
             this.ul = handler.ul;
             this.checked = handler.checked;
-            System.out.println("parseEditionsXML: OK");
+//            System.out.println("parseEditionsXML: OK");
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }

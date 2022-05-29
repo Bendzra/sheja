@@ -129,13 +129,13 @@
 
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="">Glossary</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="">Lists</a>
+                <a class="nav-link" href="">Names</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item disabled">
                 <a class="nav-link disabled" href="">Indexes</a>
             </li>
         </ul>

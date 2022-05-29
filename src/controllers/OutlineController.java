@@ -54,7 +54,7 @@ public class OutlineController extends HttpServlet
         try {
             File file = new File(path);
             parser.parse(file, handler);
-            System.out.println("parseBranches: OK");
+//            System.out.println("parseBranches: OK");
             Drops result = new Drops();
             result.drops = handler.getDrops();
             req.setAttribute("drops", result);
