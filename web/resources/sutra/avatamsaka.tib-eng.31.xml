@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../books.xsd">
 <editions ul="Avatamsaka Sutra" checked="false">
-<edition id="1" lang="tib-wylie" title="mdo phal po che [31]" author="bcom ldan 'das" translator="bai ro tsan rak+Shi ta"/>
-<edition id="2" lang="en" title="The Flower Ornament Scripture [31]" author="Buddha" translator="Thomas Cleary"/>
+<edition id="1" lang="tib-wylie" title="sa bcu'i le'u [31]" author="bcom ldan 'das" translator="bai ro tsan rak+Shi ta"/>
+<edition id="2" lang="en" title="The Ten Stages (daśabhūmika) [31]" author="Buddha" translator="Thomas Cleary"/>
 </editions>
 
 <b>

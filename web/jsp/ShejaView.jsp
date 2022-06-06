@@ -63,16 +63,21 @@
 <div class="container">
 
     <form action="" method="GET" target="_blank">
-
         <%
-            String ul = "";
+            String ul = null;
             out.println("<div class='book-list'>");
-            for (Book book : bookShelf.getBooks()) {
-                if(!ul.equals(book.getUL())) {
-                    if(!ul.equals("")) out.println("</div></ul>");
+            for (Book book : bookShelf.getBooks())
+            {
+                if(!book.getUL().equals(ul))
+                {
+                    // completing the previous <ul> if it was started:
+                    if(ul != null) out.println("</div></ul>");
+
+                    // starting new <ul>:
                     ul = book.getUL();
                     out.println("<ul>");
-                    out.println("<input class='form-check-input' type='checkbox'" + ((book.isChecked()) ? " checked/>" : "/>") );
+                    // the actual checked status of this input is set in JS
+                    out.println("<input class='form-check-input' type='checkbox'/>");
                     out.println("<strong><a href='#' class='text-dark'>" + ul + "</a></strong>");
                     out.println("<div>");
                 }
@@ -90,7 +95,9 @@
                 out.println("</label>");
                 out.println("</div>");
             }
-            if(!ul.equals("")) out.println("</div></ul>");
+            // completing the last <ul> if it was started:
+            if(ul != null) out.println("</div></ul>");
+
             out.println("</div>");
         %>
         <div class="row mt-3">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../books.xsd">
 <editions ul="Avatamsaka Sutra" checked="false">
-<edition id="1" lang="tib-wylie" title="mdo phal po che [45]" author="bcom ldan 'das" translator="bai ro tsan rak+Shi ta"/>
-<edition id="2" lang="en" title="The Flower Ornament Scripture [45]" author="Buddha" translator="Thomas Cleary"/>
+<edition id="1" lang="tib-wylie" title="sdong pos brgyan pa'i le'u [45]" author="bcom ldan 'das" translator="bai ro tsan rak+Shi ta"/>
+<edition id="2" lang="en" title="Entry into the Realm of Reality (gaṇḍavyūha) [45]" author="Buddha" translator="Thomas Cleary"/>
 </editions>
 
 <b>
