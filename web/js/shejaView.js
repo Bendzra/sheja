@@ -49,7 +49,7 @@ $(function ()
         $d.toggle("fast");
     });
 
-    $('div.book-list > ul').mouseleave(function (e) {
+    $('div.book-list > ul').mouseleave(function () {
         $d = $(this).children('div').first();
         if( $d.css('display') === "block" ) {
             $d.toggle("fast").css("z-index", 1 );
@@ -85,7 +85,7 @@ $(function ()
         for(var i = 1; i < ths.length; i++) sort_order[i] = 'no';
     }
 
-    $('table.table > thead > tr > th').click(function (e)
+    $('table.table > thead > tr > th').click(function ()
     {
         var idx = $(this).index();
         if (idx === 1) idx = 0;
@@ -123,7 +123,7 @@ $(function ()
                     return $(s, b).text().localeCompare($(s, a).text());
                 }
             })
-            .each( function(index) {
+            .each( function() {
                 $(this).removeClass('d-none');
                 if ( $(s, this).text().trim() === "" ) {
                     $(this).addClass('d-none');
@@ -145,7 +145,7 @@ $(function ()
 
         $('div.container').addClass("while-progress-bg");
         $p = $(".while-progress");
-        $p.find('label').text( "Please wait a moment...");
+        $p.find('label').text( "Loading...");
         $p.removeClass("d-none");
 
         var t = $(this).text().trim().toLowerCase();

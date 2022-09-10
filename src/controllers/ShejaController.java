@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -25,6 +26,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -62,6 +64,7 @@ public class ShejaController extends HttpServlet
         }
 
         shelveNIO(req);
+//        rwSession(req, reqBookIds);
 
         if (tristate == -2) {
             // home page:
@@ -75,10 +78,43 @@ public class ShejaController extends HttpServlet
         doSearch(req, resp, qSting, reqBookIds);
     }
 
+    private synchronized void rwSession(HttpServletRequest req, List<Integer> reqBookIds)
+    {
+        if ( bookShelf == null ) return;
+
+        // Read-Write Session
+        HttpSession session = req.getSession();
+
+        String referrer = req.getHeader("referer");
+        StringBuffer reqURL = req.getRequestURL();
+        List<Integer> list;
+
+//        System.out.println(  reqURL );
+//        System.out.println( referrer );
+
+        // Reading
+        Object obj = session.getAttribute("reqBookIds");
+        if (obj != null) {
+            list = new ArrayList<>((Collection<Integer>)obj);
+//            System.out.println("list = " + list);
+        }
+
+        // Writing
+        if( referrer != null ) {
+            if( referrer.equals(reqURL.toString()) ) {
+                if(reqBookIds != null) {
+                    session.setAttribute("reqBookIds", reqBookIds);
+                }
+            }
+        }
+
+//        System.out.println( session.getAttribute("reqBookIds") );
+    }
+
     private synchronized List<Integer> checkBooks(HttpServletRequest req, String qSting)
     {
         boolean r = (qSting != null && qSting.trim().length() > 0);
-        String[] bs = req.getParameterValues("book");
+        String[] bs = req.getParameterValues("v"); // v = book = volume = set of editions
         r &= (bs != null);
         if (!r) return null;
         List<Integer> bookIDs = new ArrayList<>(bs.length);
@@ -111,6 +147,7 @@ public class ShejaController extends HttpServlet
                 book.setId(i + 1);
                 book.setXmlPath(xmls.get(i));
                 book.parseEditionsXML();
+                if(book.isChecked()) bookShelf.default_checked_ids.add(book.getId());
                 bookShelf.addBook(book);
             }
         }

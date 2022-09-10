@@ -30,45 +30,48 @@ public class ShowController extends HttpServlet
         // по полученным book_id и crumb_id (=branch_id) парсим xml и получаем всю ветку
         // выделяем drop_id
 
-        int book_id = 1;
-        int crumb_id = 1;
-        int drop_id = 1;
-
-        try {
-            book_id = Integer.parseInt(req.getParameter("book_id"));
-            crumb_id = Integer.parseInt(req.getParameter("crumb_id"));
-            drop_id = Integer.parseInt(req.getParameter("drop_id"));
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
+        if(bookShelf == null)
+        {
+            req.setAttribute("branch", null);
         }
+        else
+        {
+            int book_id = 1;
+            int crumb_id = 1;
+            int drop_id = 1;
 
-        String path = bookShelf.getBooks().get(book_id - 1).getXmlPath();
+            try {
+                book_id = Integer.parseInt(req.getParameter("book_id"));
+                crumb_id = Integer.parseInt(req.getParameter("crumb_id"));
+                drop_id = Integer.parseInt(req.getParameter("drop_id"));
+            } catch (NumberFormatException e) {
+                throw new IOException(e);
+            }
 
+            String path = bookShelf.getBooks().get(book_id - 1).getXmlPath();
 
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        BranchesParserHandler handler = new BranchesParserHandler(bookShelf.getBooks().get(book_id - 1), drop_id, crumb_id);
-        SAXParser parser = null;
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            BranchesParserHandler handler = new BranchesParserHandler(bookShelf.getBooks().get(book_id - 1), drop_id, crumb_id);
+            SAXParser parser = null;
 
-        try {
-            parser = factory.newSAXParser();
-        } catch (ParserConfigurationException | SAXException e) {
-            e.printStackTrace();
-        }
+            try {
+                parser = factory.newSAXParser();
+            } catch (ParserConfigurationException | SAXException e) {
+                throw new IOException(e);
+            }
 
-        try {
-            File file = new File(path);
-            parser.parse(file, handler);
-        } catch (DoneParsingException e) {
+            try {
+                File file = new File(path);
+                parser.parse(file, handler);
+            } catch (DoneParsingException e) {
 //            System.out.println("parseBranches: OK");
-            Drops result = new Drops();
-            result.drops = handler.getDrops();
-            req.setAttribute("drops", result);
-
-
-        } catch (SAXException | IOException e) {
-            e.printStackTrace();
+                Drops branch = new Drops();
+                branch.drops = handler.getDrops();
+                req.setAttribute("branch", branch);
+            } catch (SAXException | IOException e) {
+                throw new IOException(e);
+            }
         }
-
         requestDispatcher = req.getRequestDispatcher("/jsp/ShowView.jsp");
         requestDispatcher.forward(req, resp);
     }

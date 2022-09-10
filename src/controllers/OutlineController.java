@@ -25,46 +25,53 @@ public class OutlineController extends HttpServlet
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
         RequestDispatcher requestDispatcher;
-        // по полученным book_id и crumb_id (=branch_id) парсим xml и получаем outline.
-        // forward'им и drop_id
+        // по полученным book_id и crumb_id (=branch_id) и drop_id парсим xml и получаем outline.
+        // forward'им
 
-        int book_id = 1;
-        int crumb_id = 1;
-        int drop_id = 1;
-
-        try {
-            book_id = Integer.parseInt(req.getParameter("book_id"));
-            crumb_id = Integer.parseInt(req.getParameter("crumb_id"));
-            drop_id = Integer.parseInt(req.getParameter("drop_id"));
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
+        if(bookShelf == null)
+        {
+            req.setAttribute("branch", null);
+            req.setAttribute("book", null);
         }
+        else
+        {
+            int book_id = 1;
+            int crumb_id = 1;
+            int drop_id = 1;
 
-        String path = bookShelf.getBooks().get(book_id - 1).getXmlPath();
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        OutlineParserHandler handler = new OutlineParserHandler(bookShelf.getBooks().get(book_id - 1), drop_id, crumb_id);
-        SAXParser parser = null;
+            try {
+                book_id = Integer.parseInt(req.getParameter("book_id"));
+                crumb_id = Integer.parseInt(req.getParameter("crumb_id"));
+                drop_id = Integer.parseInt(req.getParameter("drop_id"));
+            } catch (NumberFormatException e) {
+                throw new IOException(e);
+            }
 
-        try {
-            parser = factory.newSAXParser();
-        } catch (ParserConfigurationException | SAXException e) {
-            e.printStackTrace();
-        }
+            String path = bookShelf.getBooks().get(book_id - 1).getXmlPath();
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            OutlineParserHandler handler = new OutlineParserHandler(bookShelf.getBooks().get(book_id - 1), drop_id, crumb_id);
+            SAXParser parser = null;
 
-        try {
-            File file = new File(path);
-            parser.parse(file, handler);
+            try {
+                parser = factory.newSAXParser();
+            } catch (ParserConfigurationException | SAXException e) {
+                throw new IOException(e);
+            }
+
+            try {
+                File file = new File(path);
+                parser.parse(file, handler);
 //            System.out.println("parseBranches: OK");
-            Drops result = new Drops();
-            result.drops = handler.getDrops();
-            req.setAttribute("drops", result);
-            req.setAttribute("book", bookShelf.getBooks().get(book_id - 1));
-        } catch (SAXException | IOException e) {
-            e.printStackTrace();
+                Drops branch = new Drops();
+                branch.drops = handler.getDrops();
+                req.setAttribute("branch", branch);
+                req.setAttribute("book", bookShelf.getBooks().get(book_id - 1));
+            } catch (SAXException | IOException e) {
+                throw new IOException(e);
+            }
         }
 
         requestDispatcher = req.getRequestDispatcher("/jsp/OutlineView.jsp");
         requestDispatcher.forward(req, resp);
-
     }
 }

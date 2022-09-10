@@ -16,7 +16,7 @@ public class TestParserHandler extends DefaultHandler
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException
     {
         currentTag = qName;
-        if (qName.equals("drop")) {
+        if (qName.equals("d")) {
             drop.setText(new StringBuilder());
         }
     }
@@ -24,7 +24,7 @@ public class TestParserHandler extends DefaultHandler
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException
     {
-        if (qName.equals("drop")) {
+        if (qName.equals("d")) {
             if (drop.findIndexes().size() > 0) {
                 throw new DoneParsingException();
             }
@@ -34,7 +34,7 @@ public class TestParserHandler extends DefaultHandler
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException
     {
-        if (currentTag != null && currentTag.equals("drop")) {
+        if (currentTag != null && currentTag.equals("d")) {
             drop.getText().append(ch, start, length);
         }
     }

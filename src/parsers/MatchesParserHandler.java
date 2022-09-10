@@ -15,8 +15,8 @@ public class MatchesParserHandler extends DefaultHandler
     private List<CrumbsKeeper> spreadsheet = new ArrayList<>(); // Текущие списки crumbs для всех всех editions
     private int stepsAway = 0;  // как далеко отошли по крошкам (= stack.size)
     private int branchID = 0;   // <b>...</b>
-    private int fuseID = 0;     // <fuse>...</fuse>
-    private int dropID = 0;     // <drop>...</drop>
+    private int fuseID = 0;     // <f>...</f>
+    private int dropID = 0;     // <d>...</d>
     private String currentTag = null;
     private Drop drop = null;
     private Fuse fuse = null;
@@ -41,18 +41,18 @@ public class MatchesParserHandler extends DefaultHandler
             branchID++;
             stepsAway++;
             spreadsheet.forEach(crumbsKeeper -> crumbsKeeper.add(new Pair<>(-1, "_placeholder_")));
-        } else if (qName.equals("fuse")) {
+        } else if (qName.equals("f")) {
             fuse = new Fuse();
             fuse.setId(++fuseID);
             found = false;
-        } else if (qName.equals("drop")) {
+        } else if (qName.equals("d")) {
             drop = new Drop();
             drop.setId(++dropID);
             drop.setFuseId(fuseID);
 
             // добавляем edition
             for (int i = 0; i < attributes.getLength(); i++) {
-                if (attributes.getQName(i).equals("edition_id")) {
+                if (attributes.getQName(i).equals("e")) {
                     for (Edition edition : editions) {
                         if (edition.getId().equals(attributes.getValue(i))) {
                             drop.setEdition(edition);
@@ -89,7 +89,7 @@ public class MatchesParserHandler extends DefaultHandler
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException
     {
-        if (currentTag != null && currentTag.equals("drop")) {
+        if (currentTag != null && currentTag.equals("d")) {
             drop.getText().append(ch, start, length);
         }
     }
@@ -98,7 +98,7 @@ public class MatchesParserHandler extends DefaultHandler
     public void endElement(String uri, String localName, String qName) throws SAXException
     {
         if (results.getPairs().size() < MAX_PAIRS) {
-            if (qName.equals("drop")) {
+            if (qName.equals("d")) {
 
                 List<Integer> integers = drop.findIndexes();
                 int t = integers.size();
@@ -107,7 +107,7 @@ public class MatchesParserHandler extends DefaultHandler
                     count += t;
                     // System.out.println(count);
                 }
-            } else if (qName.equals("fuse")) {
+            } else if (qName.equals("f")) {
                 if (found) {
                     fuse.entwine();
                     results.addPairs(fuse.getMatches().getPairs());

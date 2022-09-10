@@ -1,5 +1,6 @@
 out/
-web/resources/sheja/
-web/resources/namthar/mila.*
-web/resources/namthar/kongtrul.*
+# web/resources/*/sheja*.*
+# web/resources/*/mila.*
+# web/resources/*/kongtrul.*
+# web/resources/*/damngag*.*
 zzz.github.memo.txt

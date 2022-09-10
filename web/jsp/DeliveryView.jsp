@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="javafx.util.Pair" %>
 <%@ page import="jsp.Drop" %>
 <%@ page import="java.util.List" %>
 <%@ page import="jsp.Book" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <jsp:useBean id="results" class="jsp.Found" scope="request"/>
 <jsp:useBean id="book" class="jsp.Book" scope="request"/>
 <jsp:useBean id="ofInterest" class="jsp.BookShelf" scope="request"/>
-<%!
-    String getFormattedDate()
-    {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
-        return sdf.format(new Date());
-    }
-%>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<%@ include file="includes/common.head.jsp" %>
     <title>Found</title>
 </head>
 <body>
@@ -35,17 +23,19 @@
     <%
         if (results.getPairs().size() == 0) {
     %>
-    <h1>Welcome to</h1>
-    <p>the search results delivery page</p>
-    <div class="p-3 mb-2 bg-info text-white">No entries found</div>
-    <i>Today is <%= getFormattedDate() %>
-    </i>
+	
+    <jsp:include page="includes/on.error.page.jsp">
+        <jsp:param name="info" value="the <span class='text-danger'>search results</span> delivery page"/>
+		<jsp:param name="error" value="No entries found"/>
+		<jsp:param name="proposal" value="Start over from the main search page!"/>
+    </jsp:include>
+	
     <%
     } else {
     %>
     <div class='p-3 mb-2 bg-success text-white'>${results.pairs.size()} entries found</div>
     <%
-        out.println("<div class='d-flex justify-content-center align-items-center my-5'>");
+        out.println("<div class='d-flex flex-wrap justify-content-center align-items-center my-5'>");
         for(Book b: ofInterest.getBooks()) {
             if( b.getId() == book.getId()) out.print("<a href='#' class='btn btn-primary ofInterest'>" + b.getId() + "</a> ");
             else  out.print("<a href='#' class='btn ofInterest'>" + b.getId() + "</a> ");
@@ -124,7 +114,7 @@
         dropSB.append(';');
     %>
     <%
-        out.println("<div class='d-flex justify-content-center align-items-center my-5'>");
+        out.println("<div class='d-flex flex-wrap justify-content-center align-items-center my-5'>");
         for(Book b: ofInterest.getBooks()) {
             if( b.getId() == book.getId()) out.print("<a href='#' class='btn btn-primary ofInterest'>" + b.getId() + "</a> ");
             else  out.print("<a href='#' class='btn ofInterest'>" + b.getId() + "</a> ");
@@ -137,17 +127,12 @@
     %>
 </div>
 
-
-</form>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<%--<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>--%>
+<%@ include file="includes/common.shoes.jsp" %>
 
 <script>
     $(document).ready(function () {
 
-        $('.toggleRight').on('click', function (e) {
+        $('.toggleRight').on('click', function () {
             var row = $(this).closest('div.row');
             row.find(".collapse._hidden").collapse('toggle');
             var rights = row.find(".toggleRight");
@@ -156,7 +141,7 @@
             });
         });
 
-        $('.toggleLeft').on('click', function (e) {
+        $('.toggleLeft').on('click', function () {
             var row = $(this).closest('div.row');
             row.find(".collapse.hidden_").collapse('toggle');
             var lefts = row.find(".toggleLeft");
@@ -208,17 +193,17 @@
                 String qString = request.getQueryString();
             %>
             var qs = "<% out.print(qString); %>";
-            qs = qs.replace(/&?book=\d+\b/g, "");
+            qs = qs.replace(/&?v=\d+\b/g, "");
 
             var s = "";
             $(this).parent().children().each(function( i ) {
-                if (i != 0) s += "&";
-                s += "book=" + $( this ).text();
+                if (i !== 0) s += "&";
+                s += "v=" + $( this ).text();
             });
             if (qs.length > 0 && qs.charAt(0) !== '&') s += '&';
             qs = s + qs;
 
-            re = /\bcb=\d+\b/;
+            var re = /\bcb=\d+\b/;
             s = "cb=" + $(this).text();
             if(re.test(qs)) {
                 qs = qs.replace(re, s);
@@ -228,7 +213,6 @@
             $(this).attr("href", "${pageContext.request.contextPath}/sheja?" + qs );
             $(this).attr("target", "_self");
         });
-
 
     });
 </script>

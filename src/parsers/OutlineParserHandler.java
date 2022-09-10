@@ -40,10 +40,10 @@ public class OutlineParserHandler extends DefaultHandler
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException
     {
         currentTag = qName;
-        if (qName.equals("drop")) {
+        if (qName.equals("d")) {
             drop_count++;
             for (int i = 0; i < attributes.getLength(); i++) {
-                if (attributes.getQName(i).equals("edition_id")) {
+                if (attributes.getQName(i).equals("e")) {
                     if (Integer.parseInt(attributes.getValue(i)) == edition_index + 1) {
                         dropFlag = true;
                         break;
@@ -65,7 +65,7 @@ public class OutlineParserHandler extends DefaultHandler
                 drop = new Drop();
                 drop.setId(drop_count);
                 if(branch_count == branch_id) {
-                    drop.getText().append("<ul>\r\n<li><a class='text-danger font-weight-bold' href='#'>");
+                    drop.getText().append("<ul>\r\n<li><a class='text-danger font-weight-bold vewable' href='#'>");
                 } else {
                     drop.getText().append("<ul>\r\n<li><a href='#'>");
                 }
@@ -76,7 +76,7 @@ public class OutlineParserHandler extends DefaultHandler
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException
     {
-        if (qName.equals("drop")) {
+        if (qName.equals("d")) {
             if (dropFlag && crambFlag) {
                 drop.getText().append("</a></li>");
                 drops.add(drop);
@@ -91,7 +91,7 @@ public class OutlineParserHandler extends DefaultHandler
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException
     {
-        if (currentTag != null && currentTag.equals("drop") && dropFlag && crambFlag) {
+        if (currentTag != null && currentTag.equals("d") && dropFlag && crambFlag) {
             drop.getText().append(ch, start, length);
         }
     }

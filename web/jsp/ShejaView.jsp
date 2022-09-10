@@ -5,10 +5,7 @@
 <jsp:useBean id="bookShelf" class="jsp.BookShelf" scope="request"/>
 <html>
 <head>
-    <meta charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <%@ include file="includes/common.head.jsp" %>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/shejaView.css" />
     <title>shes bya kun khyab yig rigs khag gnyis mnyam du bsgrigs pa</title>
 
@@ -56,8 +53,9 @@
 </div>
 
 <div class="while-progress d-none">
-    <i class="fas fa-2x fa-spinner fa-spin"></i>
-    <label>Please wait a while ...</label>
+    <%--<i class="fas fa-2x fa-spinner fa-spin"></i>--%>
+	<i class="fa fa-2x fa-spinner fa-spin"></i>
+    <label>Message...</label>
 </div>
 
 <div class="container">
@@ -75,7 +73,7 @@
 
                     // starting new <ul>:
                     ul = book.getUL();
-                    out.println("<ul>");
+                    out.println("<ul class='mb-2'>");
                     // the actual checked status of this input is set in JS
                     out.println("<input class='form-check-input' type='checkbox'/>");
                     out.println("<strong><a href='#' class='text-dark'>" + ul + "</a></strong>");
@@ -83,7 +81,7 @@
                 }
                 out.println("<div class='form-check'>");
                 out.print("<input class='form-check-input' type='checkbox' id='book" + book.getId()
-                        + "' value='" + book.getId() + "' name='book'");
+                        + "' value='" + book.getId() + "' name='v'");
                 if (book.isChecked()) out.print(" checked");
                 out.println(">");
                 out.print("<label class='form-check-label' for='book" + book.getId() + "'>");
@@ -128,7 +126,7 @@
                 <div class="input-group">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                            aria-describedby="search-addon" name="q"/>
-                    <button type="submit" class="btn btn-outline-dark ml-2"><i class="fas fa-search"></i></button>
+                    <button type="submit" class="btn btn-outline-dark ml-2"><i class="fa fa-search"></i></button>
                 </div>
             </div>
         </div>
@@ -167,14 +165,8 @@
 	</div>
 </div>
 
-<div style="margin-top:500px;"></div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<%@ include file="includes/common.shoes.jsp" %>
 <script src="<%=request.getContextPath()%>/js/shejaView.js"></script>
-
 
 </body>
 </html>

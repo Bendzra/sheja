@@ -5,12 +5,13 @@ import java.util.List;
 
 public class BookShelf
 {
+    private List<Book> books = new ArrayList<>();
+    public List<Integer> default_checked_ids = new ArrayList();
+
     public void setBooks(List<Book> books)
     {
         this.books = books;
     }
-
-    private List<Book> books = new ArrayList<>();
 
     public List<Book> getBooks()
     {

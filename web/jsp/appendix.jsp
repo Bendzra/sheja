@@ -3,11 +3,11 @@
     String appendix = request.getParameter("a");
     if(appendix.equals("glossary")) {
 %>
-<%@ include file="sheja-appendix.combined.glossary.htm" %>
+<%@ include file="includes/sheja-appendix.combined.glossary.htm" %>
 <%
     } else if (appendix.equals("names")) {
 %>
-<%@ include file="sheja-appendix.combined.names.htm" %>
+<%@ include file="includes/sheja-appendix.combined.names.htm" %>
 <%
     }
 %>

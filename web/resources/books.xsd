@@ -12,30 +12,30 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="drop">
+  <xs:element name="d">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="edition_id" use="required"/>
+          <xs:attribute type="xs:byte" name="e" use="required"/>
           <xs:attribute type="xs:string" name="crumb" use="optional"/>
           <xs:attribute type="xs:byte" name="root" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:element name="fuse">
+  <xs:element name="f">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="drop" maxOccurs="unbounded" minOccurs="2"/>
+        <xs:element ref="d" maxOccurs="unbounded" minOccurs="2"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="b">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="fuse" maxOccurs="unbounded" minOccurs="1"/>
+      <xs:choice maxOccurs="unbounded" minOccurs="1">
+        <xs:element ref="f" maxOccurs="unbounded" minOccurs="1"/>
         <xs:element ref="b" maxOccurs="unbounded" minOccurs="0"/>
-      </xs:sequence>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="editions">
